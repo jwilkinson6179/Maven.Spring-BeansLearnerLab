@@ -18,7 +18,7 @@ public class ClassroomConfig
         return new Classroom(instructors, students);
     }
 
-    @Bean(name = "cohort")
+    @Bean(name = "previousCohort")
     @DependsOn( { "instructors", "previousStudents"} )
     public Classroom previousCohort(@Qualifier("instructors") Instructors instructors, @Qualifier("previousStudents") Students students)
     {

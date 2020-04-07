@@ -2,6 +2,7 @@ package com.example.demo.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 public abstract class People <PersonType extends Person> implements Iterable<PersonType>
 {
@@ -65,5 +66,17 @@ public abstract class People <PersonType extends Person> implements Iterable<Per
     public List<PersonType> findAll()
     {
         return personList;
+    }
+
+    @Override
+    public String toString()
+    {
+        StringJoiner sj = new StringJoiner(", ", "[ ", " ]");
+
+        for(PersonType person : personList)
+        {
+            sj.add(person.toString());
+        }
+        return sj.toString();
     }
 }

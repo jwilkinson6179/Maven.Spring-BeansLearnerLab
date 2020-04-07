@@ -33,4 +33,10 @@ public class Classroom
     {
         teacher.lecture(numberOfHours, students);
     }
+
+    @Override
+    public String toString()
+    {
+        return "Instructors:: " + instructors + "\nStudents:: " + students;
+    }
 }
